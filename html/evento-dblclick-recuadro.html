@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery — evento dblclick (toggle tamaño)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css">  <link rel="stylesheet" href="../css/style.css">  <style>
+    #recuadro{
+      color:#aa0;
+      background-color:#ff0;
+      position:absolute;
+      text-align:center;
+      left:40px; top:30px;
+      width:800px; height:70px;           /* tamaño inicial 800×70 */
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid #999;
+      user-select:none;
+    }
+  </style>
+</head>
+<body>
+  <div id="recuadro">
+    <strong>Doble clic</strong> para alternar tamaño (800×70 ↔ 250×250)
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="../js/evento-dblclick-recuadro.js"></script>
+</body>
+</html>

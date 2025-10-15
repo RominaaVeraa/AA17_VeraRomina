@@ -1,0 +1,573 @@
+/* Variables CSS para colores y estilos */
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #8b5cf6;
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #06b6d4;
+  --border: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg-main) 0%, #1a1f3a 100%);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* Main Section */
+main {
+  opacity: 1;
+}
+
+section {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+}
+
+section h2 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Lista de actividades */
+ol {
+  list-style: none;
+  counter-reset: activity-counter;
+}
+
+ol li {
+  counter-increment: activity-counter;
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.25rem 1.25rem 4rem;
+  background: var(--bg-main);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+ol li::before {
+  content: counter(activity-counter);
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+
+ol li a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.activity-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  ol li {
+    padding: 1rem 1rem 1rem 3.5rem;
+  }
+
+  ol li::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Animación de entrada para los items */
+ol li {
+  animation: slideIn 0.4s ease-out backwards;
+}
+
+ol li:nth-child(1) { animation-delay: 0.1s; }
+ol li:nth-child(2) { animation-delay: 0.2s; }
+ol li:nth-child(3) { animation-delay: 0.3s; }
+ol li:nth-child(4) { animation-delay: 0.4s; }
+ol li:nth-child(5) { animation-delay: 0.5s; }
+ol li:nth-child(6) { animation-delay: 0.6s; }
+ol li:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================
+   ESTILOS PARA PÁGINAS DE EJERCICIOS
+   ========================================== */
+
+/* Estilos generales para ejercicios */
+body.exercise-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.exercise-page .container {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  max-width: 700px;
+}
+
+.exercise-page h1 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Ejercicio 1: Click en párrafos */
+.exercise-page p {
+  background: var(--bg-main);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  border-left: 4px solid var(--text-muted);
+}
+
+.exercise-page p#p1 {
+  border-left-color: var(--primary);
+  cursor: pointer;
+}
+
+.exercise-page p#p2 {
+  opacity: 0.6;
+  border-left-color: var(--border);
+}
+
+.exercise-page h1[id^="titulo"] {
+  background: var(--bg-main);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.exercise-page h1#titulo1 {
+  border-left: 6px solid var(--primary);
+}
+
+.exercise-page h1#titulo2 {
+  border-left: 6px solid var(--secondary);
+}
+
+.exercise-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: var(--bg-main);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.exercise-page table tr {
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+}
+
+.exercise-page table td {
+  padding: 1.2rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  color: var(--text-main);
+  border-right: 1px solid var(--border);
+}
+
+.exercise-page table td:last-child {
+  border-right: none;
+}
+
+.exercise-page table tr:nth-child(odd) {
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.exercise-page table tr:nth-child(even) {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.exercise-page > .container > p {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.exercise-page input[type="button"] {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  margin: 1.5rem 0;
+  display: block;
+  width: 100%;
+}
+
+.exercise-page input[type="button"]:active {
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+
+.exercise-page h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.exercise-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exercise-page ul li {
+  background: var(--bg-main);
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border-left: 4px solid var(--primary);
+  display: flex;
+  align-items: center;
+}
+
+.exercise-page ul li::before {
+  content: '●';
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.exercise-page ul#lista2 li {
+  border-left-color: var(--secondary);
+}
+
+.exercise-page ul#lista2 li::before {
+  color: var(--secondary);
+}
+
+.exercise-page .container > p {
+  background: var(--bg-main);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  border-left: 4px solid var(--accent);
+}
+
+.exercise-page code {
+  background: var(--bg-main);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: var(--accent);
+  font-size: 0.95em;
+  border: 1px solid var(--border);
+}
+
+.exercise-page h1 code {
+  color: var(--secondary);
+  font-size: 0.9em;
+}
+
+.exercise-page table#tabla1,
+.exercise-page table#tabla2 {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  background: var(--bg-main);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.exercise-page table#tabla1 tr,
+.exercise-page table#tabla2 tr {
+  cursor: default;
+  border-bottom: 1px solid var(--border);
+}
+
+.exercise-page table#tabla1 td,
+.exercise-page table#tabla2 td {
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  border-right: 1px solid var(--border);
+}
+
+.exercise-page table#tabla1 td:last-child,
+.exercise-page table#tabla2 td:last-child {
+  border-right: none;
+}
+
+.exercise-page table#tabla1 {
+  border-left: 4px solid var(--primary);
+}
+
+.exercise-page table#tabla2 {
+  border-left: 4px solid var(--secondary);
+}
+
+.exercise-page input[type="button"] + br {
+  display: block;
+  content: "";
+  margin: 0.5rem 0;
+}
+
+.exercise-page input[type="button"]:not(:last-of-type) {
+  margin-bottom: 0.8rem;
+}
+
+.exercise-page table#tabla1[border] td {
+  border: 1px solid var(--accent);
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.exercise-page table#tabla1:not([border]) {
+  border-left: 4px solid var(--text-muted);
+  opacity: 0.7;
+}
+
+.exercise-page table#tabla1 {
+  margin-top: 2rem;
+}
+
+.exercise-page .actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.exercise-page .actions input[type="button"] {
+  flex: 1;
+  margin: 0;
+}
+
+.exercise-page #formulario {
+  background: var(--bg-main);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  min-height: 100px;
+}
+
+.exercise-page #formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.exercise-page #formulario input[type="text"],
+.exercise-page #formulario input[type="password"] {
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.exercise-page #formulario input[type="submit"] {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.exercise-page table p {
+  margin: 0;
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.exercise-page table p:hover {
+  background: var(--bg-card-hover);
+}
+
+.exercise-page #zona {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  background: var(--bg-main);
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.exercise-page #estado {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.exercise-page #recuadro {
+  color: #aa0;
+  background-color: #ff0;
+  position: absolute;
+  text-align: center;
+  left: 40px;
+  top: 30px;
+  width: 800px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #999;
+  user-select: none;
+  border-radius: 8px;
+}
+
+.exercise-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exercise-page form label {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-top: 0.5rem;
+}
+
+.exercise-page form input[type="text"],
+.exercise-page form input[type="password"] {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.exercise-page #parrafos p {
+  background: var(--bg-main);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  border-left: 4px solid var(--primary);
+  line-height: 1.6;
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery — evento mousemove (div 200×200)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    #zona{
+      width:200px; height:200px; border:2px dashed #888;
+      display:flex; align-items:center; justify-content:center;
+      user-select:none;
+    }
+    #estado{ margin-top:12px; font-weight:600; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Evento <code>mousemove</code></h1>
+    <p>Mové el mouse dentro del recuadro. Al salir, se muestra “Fuera del área”.</p>
+
+    <div id="zona">Área de seguimiento (200×200)</div>
+    <p id="estado">Fuera del área</p>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="../js/evento-mousemove-div.js"></script>
+</body>
+</html>

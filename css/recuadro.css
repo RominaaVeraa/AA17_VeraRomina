@@ -1,0 +1,13 @@
+.recuadro{
+  background-color:#ffffcc;
+  font-family:verdana, sans-serif;
+  font-size:14px;
+
+  border-top:1px dotted #ffaa00;
+  border-right:3px solid #ff0000;
+  border-bottom:3px solid #ff0000;
+  border-left:1px dotted #ffaa00;
+
+  padding:10px;
+  border-radius:4px;
+}

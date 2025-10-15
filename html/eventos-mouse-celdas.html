@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery — mouseover y mouseout (tabla 2×2)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    table { border-collapse: collapse; }
+    td { width: 120px; height: 80px; border: 1px solid #999; text-align: center; vertical-align: middle; cursor: pointer; }
+    .pintada { background-color: #ffeb80; } /* queda fija */
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Eventos mouseover y mouseout</h1>
+    <p>Poné el mouse sobre una celda: se colorea y <strong>permanece</strong> así al retirar el mouse.</p>
+
+    <table id="tablero">
+      <tr><td>1,1</td><td>1,2</td></tr>
+      <tr><td>2,1</td><td>2,2</td></tr>
+    </table>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="../js/eventos-mouse-celdas.js"></script>
+</body>
+</html>
